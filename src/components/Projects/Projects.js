@@ -30,7 +30,16 @@ function Projects() {
               demoLink="https://play.google.com/store/apps/details?id=com.globaltech.erpsolution&hl=en_AU"
             />
           </Col>
-
+               
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={retails}
+              isBlog={false}
+              title="OMS Retails"
+              description="Transform Your Retail Business with Our All-Inclusive Retails App"
+              demoLink="https://play.google.com/store/apps/details?id=com.omsretails.retailsoms.oms&hl=en"
+            />
+          </Col>
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={b2b}
@@ -69,15 +78,7 @@ function Projects() {
               demoLink="https://play.google.com/store/apps/details?id=com.globaltech.mechanic&hl=en_AU"
             />
           </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={retails}
-              isBlog={false}
-              title="OMS Retails"
-              description="Transform Your Retail Business with Our All-Inclusive Retails App"
-              demoLink="https://play.google.com/store/apps/details?id=com.omsretails.retailsoms.oms&hl=en"
-            />
-          </Col>
+          
         </Row>
       </Container>
     </Container>
