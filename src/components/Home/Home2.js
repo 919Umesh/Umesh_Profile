@@ -38,16 +38,12 @@ function Home2() {
               <br />
               <br />
               Whenever possible, I also apply my passion for developing products
-              with <b className="purple">Dotnet</b> and
+              with <b className="purple">Flutter</b> and
               <i>
                 <b className="purple">
                   {" "}
                   Modern Library and Frameworks
                 </b>
-              </i>
-              &nbsp; like
-              <i>
-                <b className="purple"> Asp.net MVC</b>
               </i>
             </p>
           </Col>
