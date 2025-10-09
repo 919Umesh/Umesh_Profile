@@ -8,7 +8,6 @@ function Type() {
         strings: [
           "Flutter Developer",
           "Freelancer",
-          "Dotnet Developer",
         ],
         autoStart: true,
         loop: true,
