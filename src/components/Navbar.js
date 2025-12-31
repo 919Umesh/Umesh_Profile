@@ -2,20 +2,13 @@ import React, { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
-
-import { CgGitFork, CgFileDocument } from "react-icons/cg";
-import {
-  AiFillStar,
-  AiOutlineHome,
-  AiOutlineFundProjectionScreen,
-  AiOutlineUser,
-} from "react-icons/ai";
+import { Link, useNavigate } from "react-router-dom"; 
+import { FaTwitter, FaMediumM } from "react-icons/fa";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
-  const [navColour, updateNavbar] = useState(false);
+  const [updateNavbar] = useState(false);
+  const navigate = useNavigate();
 
   function scrollHandler() {
     updateNavbar(window.scrollY >= 20);
@@ -23,18 +16,46 @@ function NavBar() {
 
   window.addEventListener("scroll", scrollHandler);
 
+  const scrollToSection = (sectionId) => {
+    updateExpanded(false);
+    navigate("/"); 
+    
+    setTimeout(() => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
+
+  const navLinkStyle = {
+    color: "var(--color-navy-blue)",
+    fontWeight: "500",
+    fontSize: "18px",
+    margin: "0 15px",
+    cursor: "pointer"
+  };
+
   return (
     <Navbar
       expanded={expand}
       fixed="top"
       expand="md"
-      className={navColour ? "sticky" : "navbar"}
+      className="navbar"
+      style={{
+        backgroundColor: "transparent",
+        padding: "30px 0",
+        position: "absolute", 
+        width: "100%",
+       top: 0,
+    zIndex: 1000
+      }}
     >
       <Container>
-        <Navbar.Brand href="/" className="d-flex">
-          <strong className="main-name" style={{ fontSize: "36px", fontWeight: "bold" }}>
-            US
-          </strong>
+        <Navbar.Brand as={Link} to="/" className="d-flex">
+          <span style={{ fontSize: "28px", fontWeight: "bold", color: "var(--color-navy-blue)" }}>
+            Umesh Shahi
+          </span>
         </Navbar.Brand>
 
         <Navbar.Toggle
@@ -43,40 +64,47 @@ function NavBar() {
         />
 
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto">
-            <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-                <AiOutlineHome /> Home
-              </Nav.Link>
-            </Nav.Item>
+          <Nav className="mx-auto">
+            
+            <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)} style={navLinkStyle}>
+              Home
+            </Nav.Link>
+            
+            
+            <Nav.Link 
+              as="span" 
+              onClick={() => scrollToSection("about")} 
+              style={navLinkStyle}
+            >
+              About
+            </Nav.Link>
+           
+  <Nav.Link 
+    as="span" 
+    onClick={() => scrollToSection("experience")} 
+    style={navLinkStyle}
+  >
+    Work
+  </Nav.Link>
+  <Nav.Link 
+    as="span" 
+    onClick={() => scrollToSection("contact")} 
+    style={navLinkStyle}
+  >
+    Contact
+  </Nav.Link>
+          </Nav>
 
-            <Nav.Item>
-              <Nav.Link as={Link} to="/about" onClick={() => updateExpanded(false)}>
-                <AiOutlineUser /> About
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link as={Link} to="/project" onClick={() => updateExpanded(false)}>
-                <AiOutlineFundProjectionScreen /> Projects
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link as={Link} to="/resume" onClick={() => updateExpanded(false)}>
-                <CgFileDocument /> Resume
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item className="fork-btn">
-              <Button
-                href="https://github.com/919Umesh/Umesh_PortFolio"
-                target="_blank"
-                className="fork-btn-inner"
-              >
-                <CgGitFork /> <AiFillStar />
-              </Button>
-            </Nav.Item>
+          <Nav className="ms-auto d-none d-md-flex" style={{ alignItems: "center", gap: "25px" }}>
+            <Nav.Link href="https://medium.com" target="_blank" rel="noreferrer" style={{color: "var(--color-navy-blue)"}}>
+              <FaMediumM size={24} />
+            </Nav.Link>
+            <Nav.Link href="https://behance.net" target="_blank" rel="noreferrer" style={{color: "var(--color-navy-blue)", fontWeight: "bold"}}>
+              Bē
+            </Nav.Link>
+            <Nav.Link href="https://twitter.com" target="_blank" rel="noreferrer" style={{color: "var(--color-navy-blue)"}}>
+              <FaTwitter size={22} />
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
