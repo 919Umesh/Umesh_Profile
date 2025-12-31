@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.18c476ba.css",
+    "main.js": "/static/js/main.8988eecc.js",
+    "static/js/415.4d6acbeb.chunk.js": "/static/js/415.4d6acbeb.chunk.js",
+    "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
+    "static/media/OMS_Retails.jpg": "/static/media/OMS_Retails.be0b22fce6196789dc0a.jpg",
+    "static/media/SalesForce.jpg": "/static/media/SalesForce.7aad47491643ecc0629b.jpg",
+    "static/media/Parking.jpg": "/static/media/Parking.e4b9555fade8a1ff8513.jpg",
+    "static/media/ERP.jpg": "/static/media/ERP.4365e72ad95b6d857047.jpg",
+    "static/media/B2B.jpg": "/static/media/B2B.bc27091d7890c61d8471.jpg",
+    "static/media/Mechanic.jpg": "/static/media/Mechanic.2c98f2aff333cdfd5fd1.jpg",
+    "static/media/Umesh.pdf": "/static/media/Umesh.83693393c09bb6926a33.pdf",
+    "static/media/first.jpg": "/static/media/first.087974f059ea6011dda0.jpg",
+    "static/media/about.png": "/static/media/about.aee0f771fbfc1e7b8fa8.png",
+    "static/media/second.jpg": "/static/media/second.81878d9ef8b0373f5798.jpg",
+    "static/media/home-bg.jpg": "/static/media/home-bg.dc52d5d40a40b13154b0.jpg",
+    "static/media/pre.svg": "/static/media/pre.d4812f51c8c80976eaab.svg",
+    "index.html": "/index.html",
+    "main.18c476ba.css.map": "/static/css/main.18c476ba.css.map",
+    "main.8988eecc.js.map": "/static/js/main.8988eecc.js.map",
+    "415.4d6acbeb.chunk.js.map": "/static/js/415.4d6acbeb.chunk.js.map",
+    "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.18c476ba.css",
+    "static/js/main.8988eecc.js"
+  ]
+}
