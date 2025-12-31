@@ -21,7 +21,7 @@ function Home2() {
               I fell in love with programming and I have at least learnt
               something, I think… 🤷‍♂️
               <br />
-              <br />I am Kathmandu is the capital of Nepal and is known for its rich history and culture. I am fluent in classics like
+              <br />I am Umesh is the capital of Nepal and is known for its rich history and culture. I am fluent in classics like
               <i>
                 <b className="purple"> Flutter, Dart and Firebase. </b>
               </i>
