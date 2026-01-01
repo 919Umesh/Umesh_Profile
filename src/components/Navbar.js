@@ -3,8 +3,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import { Link, useNavigate } from "react-router-dom"; 
-import { FaTwitter, FaMediumM } from "react-icons/fa";
-
+import { FaTwitter, FaGithub, FaEnvelope } from "react-icons/fa"; 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [updateNavbar] = useState(false);
@@ -47,8 +46,8 @@ function NavBar() {
         padding: "30px 0",
         position: "absolute", 
         width: "100%",
-       top: 0,
-    zIndex: 1000
+        top: 0,
+        zIndex: 1000
       }}
     >
       <Container>
@@ -65,11 +64,9 @@ function NavBar() {
 
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto">
-            
             <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)} style={navLinkStyle}>
               Home
             </Nav.Link>
-            
             
             <Nav.Link 
               as="span" 
@@ -79,33 +76,37 @@ function NavBar() {
               About
             </Nav.Link>
            
-  <Nav.Link 
-    as="span" 
-    onClick={() => scrollToSection("experience")} 
-    style={navLinkStyle}
-  >
-    Work
-  </Nav.Link>
-  <Nav.Link 
-    as="span" 
-    onClick={() => scrollToSection("contact")} 
-    style={navLinkStyle}
-  >
-    Contact
-  </Nav.Link>
+            <Nav.Link 
+              as="span" 
+              onClick={() => scrollToSection("experience")} 
+              style={navLinkStyle}
+            >
+              Work
+            </Nav.Link>
+            <Nav.Link 
+              as="span" 
+              onClick={() => scrollToSection("contact")} 
+              style={navLinkStyle}
+            >
+              Contact
+            </Nav.Link>
           </Nav>
 
+          {/* Updated Social Links Section */}
           <Nav className="ms-auto d-none d-md-flex" style={{ alignItems: "center", gap: "25px" }}>
-            <Nav.Link href="https://medium.com" target="_blank" rel="noreferrer" style={{color: "var(--color-navy-blue)"}}>
-              <FaMediumM size={24} />
+            <Nav.Link href="https://github.com/919Umesh" target="_blank" rel="noreferrer" style={{color: "var(--color-navy-blue)"}}>
+              <FaGithub size={24} />
             </Nav.Link>
-            <Nav.Link href="https://behance.net" target="_blank" rel="noreferrer" style={{color: "var(--color-navy-blue)", fontWeight: "bold"}}>
-              Bē
-            </Nav.Link>
-            <Nav.Link href="https://twitter.com" target="_blank" rel="noreferrer" style={{color: "var(--color-navy-blue)"}}>
+            
+            <Nav.Link href="https://x.com/UmeshSh56100400" target="_blank" rel="noreferrer" style={{color: "var(--color-navy-blue)"}}>
               <FaTwitter size={22} />
             </Nav.Link>
+
+            <Nav.Link href="mailto:thakuriumesh919@gmail.com" style={{color: "var(--color-navy-blue)"}}>
+              <FaEnvelope size={22} />
+            </Nav.Link>
           </Nav>
+
         </Navbar.Collapse>
       </Container>
     </Navbar>
