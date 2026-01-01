@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.7b9ce493.css",
-    "main.js": "/static/js/main.f441d52c.js",
+    "main.js": "/static/js/main.cd2cd55b.js",
     "static/media/OMS_Retails.jpg": "/static/media/OMS_Retails.be0b22fce6196789dc0a.jpg",
     "static/media/SalesForce.jpg": "/static/media/SalesForce.7aad47491643ecc0629b.jpg",
     "static/media/Parking.jpg": "/static/media/Parking.e4b9555fade8a1ff8513.jpg",
@@ -12,10 +12,10 @@
     "static/media/first.jpg": "/static/media/first.087974f059ea6011dda0.jpg",
     "index.html": "/index.html",
     "main.7b9ce493.css.map": "/static/css/main.7b9ce493.css.map",
-    "main.f441d52c.js.map": "/static/js/main.f441d52c.js.map"
+    "main.cd2cd55b.js.map": "/static/js/main.cd2cd55b.js.map"
   },
   "entrypoints": [
     "static/css/main.7b9ce493.css",
-    "static/js/main.f441d52c.js"
+    "static/js/main.cd2cd55b.js"
   ]
 }
