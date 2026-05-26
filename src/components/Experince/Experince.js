@@ -1,4 +1,4 @@
- import React from "react";
+import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCard"; 
 import erp from "../../Assets/Projects/ERP.jpg";
@@ -41,8 +41,7 @@ function Experience() {
           left: "20px",
           fontSize: "120px",
           fontWeight: "900",
-          color: "var(--color-soft-yellow)",
-          opacity: 0.5,
+          color: "var(--color-navy-blue)",
           zIndex: 0,
           lineHeight: "1"
         }}>

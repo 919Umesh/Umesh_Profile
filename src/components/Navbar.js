@@ -40,6 +40,7 @@ function NavBar() {
       expanded={expand}
       fixed="top"
       expand="md"
+      variant="light"
       className="navbar"
       style={{
         backgroundColor: "transparent",

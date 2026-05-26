@@ -6,51 +6,49 @@ import { FaGooglePlay } from "react-icons/fa";
 function ProjectCard(props) {
   return (
     <Card style={{ 
-      backgroundColor: "transparent", 
-      border: "1px solid var(--color-navy-blue)",
-      borderRadius: "15px",
+      backgroundColor: "var(--color-cream-white)", 
+      border: "2px solid var(--color-navy-blue)",
+      borderRadius: "12px",
       height: "100%",
       display: "flex",
       flexDirection: "column",
-      transition: "all 0.3s ease",
-      overflow: "hidden"
+      transition: "transform 0.2s ease, box-shadow 0.2s ease",
+      overflow: "hidden",
+      boxShadow: "6px 6px 0px var(--color-navy-blue)",
+      position: "relative"
     }}
-    className="h-100 shadow-sm"
+    className="h-100 project-card"
     >
-      <div style={{ 
-        width: "100%", 
-        paddingTop: "145%", 
-        position: "relative",
-        backgroundColor: "var(--color-cream-white)",
+      {/* Decorative Neo-brutalist Window Header */}
+      <div style={{
+        backgroundColor: "var(--color-soft-yellow)",
+        borderBottom: "2px solid var(--color-navy-blue)",
+        padding: "10px 15px",
+        display: "flex",
+        gap: "8px"
       }}>
-        <Card.Img
-          src={props.imgPath}
-          alt="project-img"
-          style={{
-            position: "absolute",
-            top: "15px", 
-            left: "0",
-            width: "100%", 
-            height: "calc(100% - 15px)", 
-            objectFit: "contain",
-            objectPosition: "top center",
-          }}
-        />
+        <div style={{ width: "14px", height: "14px", borderRadius: "50%", border: "2px solid var(--color-navy-blue)", backgroundColor: "var(--color-cream-white)" }}></div>
+        <div style={{ width: "14px", height: "14px", borderRadius: "50%", border: "2px solid var(--color-navy-blue)", backgroundColor: "var(--color-cream-white)" }}></div>
+        <div style={{ width: "14px", height: "14px", borderRadius: "50%", border: "2px solid var(--color-navy-blue)", backgroundColor: "var(--color-cream-white)" }}></div>
       </div>
 
       <Card.Body style={{ 
-        padding: "10px 15px 15px 15px", 
+        padding: "40px 20px 30px", 
         display: "flex", 
         flexDirection: "column", 
         justifyContent: "space-between",
+        alignItems: "center",
         flexGrow: 1 
       }}>
-        <div style={{ textAlign: "center" }}>
+        <div style={{ textAlign: "center", marginBottom: "20px" }}>
           <Card.Title style={{ 
-            fontSize: "1.05rem", 
-            fontWeight: "bold", 
+            fontSize: "1.5rem", 
+            fontWeight: "900", 
             color: "var(--color-navy-blue)",
-            margin: "0"
+            margin: "0",
+            lineHeight: "1.2",
+            textTransform: "uppercase",
+            letterSpacing: "1px"
           }}>
             {props.title}
           </Card.Title>
@@ -59,21 +57,27 @@ function ProjectCard(props) {
         <Button
           href={props.demoLink}
           target="_blank"
+          className="project-btn"
           style={{
-            backgroundColor: "var(--color-soft-yellow)",
-            border: "1px solid var(--color-navy-blue)",
+            backgroundColor: "transparent",
+            border: "2px solid var(--color-navy-blue)",
+            borderRadius: "8px",
             color: "var(--color-navy-blue)",
-            fontWeight: "600",
-            fontSize: "0.85rem",
+            fontWeight: "800",
+            fontSize: "1rem",
+            padding: "12px",
             width: "100%",
-            marginTop: "12px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            gap: "8px"
+            gap: "10px",
+            boxShadow: "3px 3px 0px var(--color-navy-blue)",
+            transition: "all 0.2s ease",
+            marginTop: "auto",
+            textTransform: "uppercase"
           }}
         >
-          <FaGooglePlay size={12} /> View App
+          <FaGooglePlay size={16} /> View App
         </Button>
       </Card.Body>
     </Card>

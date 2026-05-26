@@ -1,37 +1,43 @@
-const SUPABASE_URL = "https://xuodtwztsrbqtfiisxrq.supabase.co";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh1b2R0d3p0c3JicXRmaWlzeHJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI3NjM4MzQsImV4cCI6MjA2ODMzOTgzNH0.6LgBKcqa_fzM0czazc5eo6Zkj6FX_H_AftJvIy5i_y8";
+const ONESIGNAL_API_KEY = "os_v2_app_xmzxpa3xq5hs7de7bxmzj4wm6vbpekcdunwucx5mavjqsjn3rk7q7y7nijanhv7mhfocb5be4v5h7pnq6izbuibhn7fyoadocgwrdwa";
+const ONESIGNAL_APP_ID = "bb337783-7787-4f2f-8c9f-0dd994f2ccf5";
+const TEMPLATE_ID = "bfedc260-4914-4a37-b77d-3d740ed13126";
 
 export const sendContactEmail = async (formData) => {
-  const endpoint = `${SUPABASE_URL}/functions/v1/query-mail`;
-  const headers = {
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-    'apikey': SUPABASE_ANON_KEY,
-  };
-
-  const requestBody = {
-    email: "thakuriumesh919@gmail.com",
-    email_type: "CONTACT_QUERY",   
-    query_data: {
+  const body = {
+    app_id: ONESIGNAL_APP_ID,
+    template_id: TEMPLATE_ID,
+    email_from_name: "Umesh Protfolio Website",
+    email_from_address: "dale@umesh-shahi.com.np",
+    email_sender_domain: "mail.umesh-shahi.com.np",
+    include_unsubscribed: true,
+    disable_email_click_tracking: false,
+    name: "Contact Email",
+    email_to: [
+      "thakuriumesh919@gmail.com"
+    ],
+    custom_data: {
       name: formData.name,
       email: formData.email, 
       message: formData.message,
-    },
+    }
   };
 
   try {
-    const response = await fetch(endpoint, {
-      method: 'POST',
-      headers: headers,
-      body: JSON.stringify(requestBody),
+    const response = await fetch("https://api.onesignal.com/notifications?c=email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Key ${ONESIGNAL_API_KEY}`
+      },
+      body: JSON.stringify(body)
     });
 
-    const result = await response.json();
-
+    const data = await response.json();
+    
     if (response.ok) {
-      return { success: true, data: result };
+      return { success: true, data };
     } else {
-      return { success: false, error: result };
+      return { success: false, error: data };
     }
   } catch (error) {
     console.error("Email Error:", error);

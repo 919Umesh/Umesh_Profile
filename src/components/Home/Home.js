@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from "../../Assets/first.jpg";
-import pdf from "../../Assets/Umesh.pdf"; 
+import homeLogo from "../../Assets/profile.jpg";
+import pdf from "../../Assets/UmeshShahiThakuri.pdf"; 
 import About from "../About/About";
 import Experience from "../Experince/Experince";
 import Contact from "../Contact/Contact";
@@ -28,7 +28,7 @@ function Home() {
                 Hello, I'm Umesh,
               </h5>
 
-              <h1 style={{ 
+              <h1 className="home-title" style={{ 
                 fontSize: "80px", 
                 lineHeight: "1.1", 
                 fontWeight: "900", 
@@ -85,9 +85,9 @@ function Home() {
                 zIndex: 1
               }}></div>
 
-              <div style={{
-                width: "400px",
-                height: "400px",
+              <div className="profile-img" style={{
+                width: "460px",
+                height: "460px",
                 borderRadius: "50%",
                 border: "1px solid var(--color-olive-green)",
                 padding: "15px",
