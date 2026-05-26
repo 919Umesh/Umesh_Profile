@@ -21,7 +21,7 @@ export const sendContactEmail = async (formData) => {
       message: formData.message,
     }
   };
-
+// console.log("Email Body:", body); // Debug log
   try {
     const response = await fetch("https://api.onesignal.com/notifications?c=email", {
       method: "POST",
