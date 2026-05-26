@@ -1,4 +1,4 @@
-const ONESIGNAL_API_KEY = "os_v2_app_xmzxpa3xq5hs7de7bxmzj4wm6vbpekcdunwucx5mavjqsjn3rk7q7y7nijanhv7mhfocb5be4v5h7pnq6izbuibhn7fyoadocgwrdwa";
+const ONESIGNAL_API_KEY = "os_v2_app_xmzxpa3xq5hs7de7bxmzj4wm6u3jmnxsifkusu4rwof2amon5t2ckgxqw43cdll4ykwmfp5s5i5257sblztfoigdzbeiigmtr347fpi";
 const ONESIGNAL_APP_ID = "bb337783-7787-4f2f-8c9f-0dd994f2ccf5";
 const TEMPLATE_ID = "bfedc260-4914-4a37-b77d-3d740ed13126";
 
