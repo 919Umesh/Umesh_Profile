@@ -32,7 +32,7 @@ function About() {
           position: "absolute",
           top: "10px", 
           left: "20px",
-          fontSize: "120px",
+          fontSize: "80px",
           fontWeight: "900",
           color: "var(--color-navy-blue)",
           zIndex: 0,

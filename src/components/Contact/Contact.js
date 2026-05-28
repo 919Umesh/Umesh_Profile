@@ -103,7 +103,7 @@ function Contact() {
           position: "absolute",
           top: "10px", 
           left: "20px",
-          fontSize: "120px",
+          fontSize: "80px",
           fontWeight: "900",
           color: "var(--color-navy-blue)",
           zIndex: 0,
@@ -113,7 +113,7 @@ function Contact() {
         </h1>
 
         <Row style={{ position: "relative", zIndex: 1, marginTop: "80px" }}>
-          <Col md={6} style={{ paddingRight: "50px", marginBottom: "50px" }}>
+          <Col md={6} className="contact-col-left" style={{ marginBottom: "50px" }}>
             <h3 style={{ color: "var(--color-navy-blue)", fontWeight: "800", marginBottom: "30px" }}>
               Send me a message
             </h3>
@@ -186,7 +186,7 @@ function Contact() {
             </Form>
           </Col>
 
-          <Col md={6} style={{ borderLeft: "1px solid rgba(0,0,0,0.1)", paddingLeft: "50px" }}>
+          <Col md={6} className="contact-col-right">
             <h3 style={{ color: "var(--color-navy-blue)", fontWeight: "800", marginBottom: "30px" }}>
               Get in touch
             </h3>
