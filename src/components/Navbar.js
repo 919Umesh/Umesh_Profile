@@ -1,19 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import { Link, useNavigate } from "react-router-dom"; 
-import { FaTwitter, FaGithub, FaEnvelope } from "react-icons/fa"; 
+import { Link, useNavigate } from "react-router-dom";
+import { FaTwitter, FaGithub, FaEnvelope } from "react-icons/fa";
+import { useAuth } from "../context/AuthContext";
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
-  const [updateNavbar] = useState(false);
+  const [, updateNavbar] = useState(false);
   const navigate = useNavigate();
+  const { user, isBlogger, logout } = useAuth();
 
-  function scrollHandler() {
-    updateNavbar(window.scrollY >= 20);
-  }
-
-  window.addEventListener("scroll", scrollHandler);
+  useEffect(() => {
+    function scrollHandler() {
+      updateNavbar(window.scrollY >= 20);
+    }
+    window.addEventListener("scroll", scrollHandler);
+    return () => window.removeEventListener("scroll", scrollHandler);
+  }, []);
 
   const scrollToSection = (sectionId) => {
     updateExpanded(false);
@@ -84,13 +88,23 @@ function NavBar() {
             >
               Work
             </Nav.Link>
-            <Nav.Link 
-              as="span" 
-              onClick={() => scrollToSection("contact")} 
+            <Nav.Link
+              as="span"
+              onClick={() => scrollToSection("contact")}
               style={navLinkStyle}
             >
               Contact
             </Nav.Link>
+
+            <Nav.Link as={Link} to="/blogs" onClick={() => updateExpanded(false)} style={navLinkStyle}>
+              Blog
+            </Nav.Link>
+
+            {user && isBlogger && (
+              <Nav.Link as={Link} to="/admin/blogs" onClick={() => updateExpanded(false)} style={navLinkStyle}>
+                Write
+              </Nav.Link>
+            )}
           </Nav>
 
           {/* Updated Social Links Section */}
@@ -98,7 +112,7 @@ function NavBar() {
             <Nav.Link href="https://github.com/919Umesh" target="_blank" rel="noreferrer" style={{color: "var(--color-navy-blue)"}}>
               <FaGithub size={24} />
             </Nav.Link>
-            
+
             <Nav.Link href="https://x.com/UmeshSh56100400" target="_blank" rel="noreferrer" style={{color: "var(--color-navy-blue)"}}>
               <FaTwitter size={22} />
             </Nav.Link>
@@ -106,6 +120,16 @@ function NavBar() {
             <Nav.Link href="mailto:thakuriumesh919@gmail.com" style={{color: "var(--color-navy-blue)"}}>
               <FaEnvelope size={22} />
             </Nav.Link>
+
+            {user && isBlogger && (
+              <Nav.Link
+                as="span"
+                onClick={() => { logout(); navigate("/"); }}
+                style={{ color: "var(--color-navy-blue)", fontWeight: 600, cursor: "pointer" }}
+              >
+                Log out
+              </Nav.Link>
+            )}
           </Nav>
 
         </Navbar.Collapse>

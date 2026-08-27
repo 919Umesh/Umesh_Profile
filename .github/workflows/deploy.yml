@@ -21,7 +21,20 @@ jobs:
         run: npm install
 
       - name: Build project
+        # These are all non-secret (the same project/database/collection IDs
+        # already committed in plaintext in the SajhaSwayamsewak app source),
+        # so they're set directly here rather than via repo secrets. Keep
+        # APPWRITE_API_KEY (server-only, used by scripts/setup-appwrite.mjs)
+        # OUT of this file and out of REACT_APP_* entirely — it must never
+        # end up in the built JS bundle.
         run: npm run build
+        env:
+          REACT_APP_APPWRITE_ENDPOINT: https://fra.cloud.appwrite.io/v1
+          REACT_APP_APPWRITE_PROJECT_ID: 6996beb90002219bff63
+          REACT_APP_APPWRITE_DATABASE_ID: 6996bfd50005e4ecb093
+          REACT_APP_BLOG_COLLECTION_ID: blogs
+          REACT_APP_BLOG_BUCKET_ID: blog_images
+          REACT_APP_BLOG_TEAM_ID: bloggers
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
