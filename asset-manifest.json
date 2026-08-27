@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c09db524.css",
-    "main.js": "/static/js/main.135ffd3b.js",
+    "main.css": "/static/css/main.92c6f0cc.css",
+    "main.js": "/static/js/main.5a857616.js",
     "static/media/OMS_Retails.jpg": "/static/media/OMS_Retails.be0b22fce6196789dc0a.jpg",
     "static/media/SalesForce.jpg": "/static/media/SalesForce.7aad47491643ecc0629b.jpg",
     "static/media/Parking.jpg": "/static/media/Parking.e4b9555fade8a1ff8513.jpg",
@@ -11,11 +11,11 @@
     "static/media/UmeshShahiThakuri.pdf": "/static/media/UmeshShahiThakuri.d47a174a068ebf91d872.pdf",
     "static/media/profile.jpg": "/static/media/profile.3a24a1352feb6ab0ff62.jpg",
     "index.html": "/index.html",
-    "main.c09db524.css.map": "/static/css/main.c09db524.css.map",
-    "main.135ffd3b.js.map": "/static/js/main.135ffd3b.js.map"
+    "main.92c6f0cc.css.map": "/static/css/main.92c6f0cc.css.map",
+    "main.5a857616.js.map": "/static/js/main.5a857616.js.map"
   },
   "entrypoints": [
-    "static/css/main.c09db524.css",
-    "static/js/main.135ffd3b.js"
+    "static/css/main.92c6f0cc.css",
+    "static/js/main.5a857616.js"
   ]
 }
