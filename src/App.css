@@ -63,17 +63,7 @@ body {
   }
 }
 
-@media (max-width: 768px) {
-  .contact-col-right {
-    border-left: none !important;
-    padding-left: 15px !important;
-    text-align: left !important;
-    margin-top: 40px;
-  }
-  .contact-col-left {
-    padding-right: 15px !important;
-  }
-}
+
 
 /* Additional navbar fixes */
 .navbar-toggler {
@@ -96,8 +86,8 @@ body {
 
 /* Project Card Hover */
 .project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 6px 6px 0px var(--color-navy-blue) !important;
+  transform: translateY(-4px);
+  box-shadow: 5px 5px 0px var(--color-navy-blue) !important;
 }
 
 /* Button Hover */
@@ -114,11 +104,25 @@ button:hover, .btn:hover {
   box-shadow: 4px 4px 0px var(--color-navy-blue) !important;
 }
 
-/* Contact column base spacing (desktop) — mobile overrides already exist above */
-.contact-col-left {
-  padding-right: 50px;
+/* Contact Info Link Hover */
+.contact-info-link {
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
-.contact-col-right {
-  border-left: 1px solid rgba(0,0,0,0.1);
-  padding-left: 50px;
+
+.contact-info-link:hover {
+  transform: translateX(6px);
+  opacity: 0.85;
 }
+
+/* Product List Link Hover */
+.product-list-link {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.product-list-link:hover {
+  transform: translateX(6px);
+  opacity: 0.75;
+}
+
+
+

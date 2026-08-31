@@ -1,12 +1,5 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import ProjectCard from "./ProjectCard"; 
-import erp from "../../Assets/Projects/ERP.jpg";
-import b2b from "../../Assets/Projects/B2B.jpg";
-import salesforce from "../../Assets/Projects/SalesForce.jpg";
-import parking from "../../Assets/Projects/Parking.jpg";
-import mechanic from "../../Assets/Projects/Mechanic.jpg";
-import retails from "../../Assets/Projects/OMS_Retails.jpg";
 
 function Experience() {
   const timelineItemStyle = {
@@ -26,6 +19,15 @@ function Experience() {
     borderRadius: "50%",
     backgroundColor: "var(--color-navy-blue)"
   };
+
+  const products = [
+    { title: "OMS ERP", link: "https://play.google.com/store/apps/details?id=com.globaltech.erpsolution&hl=en_AU" },
+    { title: "OMS Retails", link: "https://play.google.com/store/apps/details?id=com.omsretails.retailsoms.oms&hl=en" },
+    { title: "OMS B2B", link: "https://play.google.com/store/apps/details?id=com.globaltech.b2b&hl=en_AU" },
+    { title: "OMS Salesforce", link: "https://play.google.com/store/apps/details?id=com.solution.omssalesforce&hl=en_AU" },
+    { title: "OMS Parking", link: "https://play.google.com/store/apps/details?id=com.solution.omsparking&hl=en_AU" },
+    { title: "OMS Mechanic", link: "https://play.google.com/store/apps/details?id=com.globaltech.mechanic&hl=en_AU" }
+  ];
 
   return (
     <Container fluid id="experience" style={{ 
@@ -58,11 +60,39 @@ function Experience() {
               <h4 style={{ color: "var(--color-navy-blue)", fontWeight: "800" }}>
                 Software Engineer — <a href="https://www.inovaara.com/" target="_blank" rel="noreferrer" style={{color: "var(--color-olive-green)", textDecoration: "none"}}>Inovaara Technologies</a>
               </h4>
-              <p style={{ color: "var(--color-navy-blue)", opacity: 0.9, maxWidth: "900px" }}>
+              <p style={{ color: "var(--color-navy-blue)", opacity: 0.9, maxWidth: "900px", marginBottom: "25px" }}>
                 Working on scaling, optimization, and system design. Expertise in SQL, Edge Functions, RPC, and complex data management. 
                 Integrating DSA concepts to solve high-level architectural challenges.
               </p>
+
+              <h5 style={{ color: "var(--color-navy-blue)", fontWeight: "700", marginBottom: "15px" }}>
+                Developed Products:
+              </h5>
+
+              <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+                <a
+                  href="https://krayam.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="product-list-link"
+                  style={{
+                    color: "var(--color-navy-blue)",
+                    textDecoration: "none",
+                    fontSize: "1.1rem",
+                    fontWeight: "600",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "8px",
+                    width: "fit-content"
+                  }}
+                >
+                  <span style={{ color: "var(--color-navy-blue)", opacity: 0.6 }}>•</span>
+                  <span>Krayam</span>
+                  <span style={{ fontSize: "0.95rem", opacity: 0.7 }}>↗</span>
+                </a>
+              </div>
             </div>
+
             <div style={timelineItemStyle}>
               <div style={dotStyle}></div>
               <h5 style={{ fontWeight: "bold", color: "var(--color-navy-blue)" }}>
@@ -71,32 +101,39 @@ function Experience() {
               <h4 style={{ color: "var(--color-navy-blue)", fontWeight: "800" }}>
                 Mid-level Mobile Developer (Flutter) — <a href="https://globaltechnepal.com/" target="_blank" rel="noreferrer" style={{color: "var(--color-olive-green)", textDecoration: "none"}}>Global Tech Nepal</a>
               </h4>
-              <p style={{ color: "var(--color-navy-blue)", opacity: 0.9, maxWidth: "900px", marginBottom: "30px" }}>
+              <p style={{ color: "var(--color-navy-blue)", opacity: 0.9, maxWidth: "900px", marginBottom: "25px" }}>
                 Developed cross-platform apps using MVC and Clean Architecture. Managed state with GetX/BLoC and integrated .NET APIs and Firebase.
               </p>
 
-              <h5 style={{ color: "var(--color-navy-blue)", fontWeight: "700", marginBottom: "30px" }}>
+              <h5 style={{ color: "var(--color-navy-blue)", fontWeight: "700", marginBottom: "15px" }}>
                 Developed Products:
               </h5>
-               
-            <Row className="justify-content-center">
-              {[
-                { img: erp, title: "OMS ERP", link: "https://play.google.com/store/apps/details?id=com.globaltech.erpsolution&hl=en_AU" },
-                { img: retails, title: "OMS Retails", link: "https://play.google.com/store/apps/details?id=com.omsretails.retailsoms.oms&hl=en" },
-                { img: b2b, title: "OMS B2B", link: "https://play.google.com/store/apps/details?id=com.globaltech.b2b&hl=en_AU" },
-                { img: salesforce, title: "OMS Salesforce", link: "https://play.google.com/store/apps/details?id=com.solution.omssalesforce&hl=en_AU" },
-                { img: parking, title: "OMS Parking", link: "https://play.google.com/store/apps/details?id=com.solution.omsparking&hl=en_AU" },
-                { img: mechanic, title: "OMS Mechanic", link: "https://play.google.com/store/apps/details?id=com.globaltech.mechanic&hl=en_AU" }
-              ].map((item, index) => (
-              <Col key={index} lg={3} md={4} sm={6} xs={12} className="mb-4">
-              <ProjectCard
-                imgPath={item.img}
-                title={item.title}
-                demoLink={item.link}
-            />
-    </Col>
-  ))}
-</Row>
+
+              <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+                {products.map((item, index) => (
+                  <a
+                    key={index}
+                    href={item.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="product-list-link"
+                    style={{
+                      color: "var(--color-navy-blue)",
+                      textDecoration: "none",
+                      fontSize: "1.1rem",
+                      fontWeight: "600",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "8px",
+                      width: "fit-content"
+                    }}
+                  >
+                    <span style={{ color: "var(--color-navy-blue)", opacity: 0.6 }}>•</span>
+                    <span>{item.title}</span>
+                    <span style={{ fontSize: "0.95rem", opacity: 0.7 }}>↗</span>
+                  </a>
+                ))}
+              </div>
             </div>
 
           </Col>
