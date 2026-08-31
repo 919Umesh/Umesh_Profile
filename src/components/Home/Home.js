@@ -35,7 +35,7 @@ function Home() {
                 color: "var(--color-navy-blue)",
                 margin: "0 0 20px 0"
               }}>
-                Flutter <br /> Developer
+                Software <br /> Engineer
               </h1>
 
               <h5 style={{ color: "var(--color-navy-blue)", opacity: 0.8, marginBottom: "40px" }}>
