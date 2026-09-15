@@ -66,8 +66,8 @@ function BlogList() {
     <section className="blog-page">
       <div className="blog-shell">
         <div className="blog-list-header">
-          <h1>Guides, Notes &amp; Engineering Write-ups</h1>
-          <p>Things I'm building, lessons from shipping mobile apps, and the occasional deep dive.</p>
+          <h1>My Experiences &amp; Opinions</h1>
+          <p>Personal stories, lessons, and perspectives from my journey.</p>
         </div>
 
         {error && <div className="blog-empty">{error}</div>}
