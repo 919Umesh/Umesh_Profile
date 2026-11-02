@@ -1,0 +1,97 @@
+---
+import Stop from "./Stop.astro";
+import { testimonials } from "../../data/content";
+
+const ink = "#40302A";
+const tilts = [-3, 2.5, -1.5, 3.5, -2.5];
+---
+
+<Stop id="hikers" label="Fireside — words from fellow hikers" class="s-fire">
+  <Fragment slot="scene">
+    <div class="plant campfire" style="--x:28%;--xm:46%;--w:calc(var(--yak-w) * 0.77);--wm:96px">
+      <span class="fire-glow"></span>
+      <svg viewBox="0 0 150 130">
+        <g class="flames">
+          <path class="flame f1" d="M75 112 C 40 108 38 74 58 52 C 60 70 68 72 70 60 C 72 40 84 24 88 6 C 102 32 118 52 112 80 C 108 100 96 112 75 112 Z" fill="#E85D2F" stroke={ink} stroke-width="3" stroke-linejoin="round"></path>
+          <path class="flame f2" d="M76 112 C 56 110 54 88 66 74 C 68 84 74 86 76 76 C 78 64 86 56 88 46 C 98 62 104 78 100 92 C 96 106 88 112 76 112 Z" fill="#FFC53D" stroke={ink} stroke-width="2.5" stroke-linejoin="round"></path>
+          <path class="flame f3" d="M77 112 C 68 110 66 100 72 92 C 74 98 78 98 79 92 C 81 98 86 102 85 106 C 84 110 81 112 77 112 Z" fill="#FFFDF6"></path>
+        </g>
+        {
+          ["rotate(-10 75 112) translate(150 0) scale(-1 1)", "rotate(10 75 112)"].map((t) => (
+            <g transform={t}>
+              <path d="M22 104 L130 104 L130 120 L22 120 C17 120 14 116.5 14 112 C14 107.5 17 104 22 104 Z" fill="#8A5A3B"></path>
+              <path d="M16 116.5 Q70 119.5 130 117.5 L130 120 L22 120 C19 120 17 118.5 16 116.5 Z" fill="#6F4529"></path>
+              <path d="M26 107.5 Q70 106.5 118 107.5" fill="none" stroke="#A8744C" stroke-width="2.5" stroke-linecap="round"></path>
+              <g fill="none" stroke={ink} stroke-opacity=".35" stroke-width="1.6" stroke-linecap="round">
+                <path d="M34 111.5 q9 -1 18 0"></path>
+                <path d="M70 113 q8 1 16 0"></path>
+                <path d="M100 111 h11"></path>
+              </g>
+              <path d="M22 104 L130 104 L130 120 L22 120 C17 120 14 116.5 14 112 C14 107.5 17 104 22 104 Z" fill="none" stroke={ink} stroke-width="3" stroke-linejoin="round"></path>
+              <ellipse cx="130" cy="112" rx="5.5" ry="8" fill="#7C4F2E" stroke={ink} stroke-width="2.5"></ellipse>
+              <ellipse cx="130.3" cy="112" rx="3.6" ry="5.8" fill="#E0A970"></ellipse>
+              <ellipse cx="130.3" cy="112" rx="1.8" ry="3" fill="none" stroke="#9A6A42" stroke-width="1.2"></ellipse>
+            </g>
+          ))
+        }
+      </svg>
+    </div>
+    <div class="plant log-seat" style="--x:42%;--xm:-20%;--w:calc(var(--yak-w) * 0.7);--wm:90px">
+      <svg viewBox="0 0 130 46">
+        <ellipse cx="64" cy="42.5" rx="58" ry="3" fill={ink} fill-opacity=".14"></ellipse>
+        <path d="M71 12 L72 4.5 Q75.5 2 79 4.5 L80 12" fill="#7C4F2E" stroke={ink} stroke-width="2.5" stroke-linejoin="round"></path>
+        <ellipse cx="75.5" cy="4.5" rx="3.5" ry="1.8" fill="#E0A970" stroke={ink} stroke-width="2"></ellipse>
+        <path d="M18 10 Q60 8 111 10 L111 41 Q60 43 18 41 C7 41 3 34 3 25.5 C3 17 7 10 18 10 Z" fill="#8A5A3B"></path>
+        <path d="M7 34 Q60 38.5 111 36 L111 41 Q60 43 18 41 C12 41 9 38 7 34 Z" fill="#6F4529"></path>
+        <path d="M22 15 Q58 13 98 15" fill="none" stroke="#A8744C" stroke-width="3" stroke-linecap="round"></path>
+        <g fill="none" stroke={ink} stroke-opacity=".35" stroke-width="2" stroke-linecap="round">
+          <path d="M26 20 q11 -1 22 0"></path>
+          <path d="M60 19 q8 -1 15 0"></path>
+          <path d="M86 21 h12"></path>
+          <path d="M14 27 h9"></path>
+          <path d="M56 28 q11 1 22 0"></path>
+          <path d="M86 30 h10"></path>
+          <path d="M26 34 h14"></path>
+        </g>
+        <ellipse cx="45" cy="27" rx="4.5" ry="3.2" fill="#6F4529" stroke={ink} stroke-width="2"></ellipse>
+        <path d="M18 10 Q60 8 111 10 L111 41 Q60 43 18 41 C7 41 3 34 3 25.5 C3 17 7 10 18 10 Z" fill="none" stroke={ink} stroke-width="3" stroke-linejoin="round"></path>
+        <ellipse cx="112" cy="25.5" rx="11" ry="15.5" fill="#7C4F2E" stroke={ink} stroke-width="3"></ellipse>
+        <ellipse cx="112.5" cy="25.5" rx="8.2" ry="12.5" fill="#E0A970"></ellipse>
+        <g fill="none" stroke="#9A6A42" stroke-width="1.6">
+          <ellipse cx="112.5" cy="25.5" rx="5.6" ry="8.8"></ellipse>
+          <ellipse cx="112.5" cy="25.5" rx="2.8" ry="4.6"></ellipse>
+        </g>
+        <path d="M113 25 L118.5 17" fill="none" stroke={ink} stroke-opacity=".45" stroke-width="1.6" stroke-linecap="round"></path>
+        <circle cx="112.5" cy="25.5" r="1.2" fill={ink} fill-opacity=".55"></circle>
+      </svg>
+    </div>
+  </Fragment>
+
+  <div class="register">
+    <div class="register-head">
+      <h2 class="section-title">Fellow hikers</h2>
+      <p class="hand">left these in the trail register — they shuffle on their own; tap a note to take over</p>
+    </div>
+
+    <div class="deck" id="deck" data-deck>
+      {
+        testimonials.map((t, i) => (
+          <figure class="note paper" data-note style={`--r:${tilts[i % tilts.length]}deg;--i:${i}`}>
+            <blockquote>{t.quote}</blockquote>
+            <figcaption>
+              <span class="note-name">{t.name}</span>
+              <span class="note-role">{t.role}</span>
+            </figcaption>
+          </figure>
+        ))
+      }
+    </div>
+
+    <div class="deck-controls">
+      <button class="ink-btn ink-btn-sm" data-deck-prev aria-label="Previous note">←</button>
+      <span class="hand deck-count" data-deck-count aria-live="polite">1 of {testimonials.length}</span>
+      <button class="ink-btn ink-btn-sm" data-deck-next aria-label="Next note">→</button>
+      <button class="ink-btn ink-btn-sm" data-deck-auto aria-pressed="false" aria-label="Pause the note shuffling">❚❚</button>
+    </div>
+  </div>
+</Stop>
